@@ -6,6 +6,7 @@ Proyecto del curso Programación Avanzada con integración en desarrollo de tecn
 * [CSS style guide](https://github.com/airbnb/css#css)
 * [BEM - CSS guide](http://getbem.com/introduction/)
 * [JS style guide](https://github.com/airbnb/javascript)
+* [Git cheat sheet guide](https://education.github.com/git-cheat-sheet-education.pdf)
 
 ## Instrucciones 🚀
 
