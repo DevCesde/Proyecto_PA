@@ -55,7 +55,7 @@ Nuestra forma de desarrollar este proyecto es el siguiente:
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 
-| [<img src="https://avatars2.githubusercontent.com/u/27802233?s=400&u=172450d19b7685357313b65d265cbe5c377484d1&v=4" width="100px;"/><br /><sub><b>Jhonatan Rojas</b></sub>](https://github.com/jhonatanrojasbastidas)<br />[💻](https://github.com/rtsc8/hostal_donde_las_paisas/commits/develop "Code") [📋](#eventOrganizing-JhonatanRojas "Event Organizing") [📖](https://github.com/rtsc8/hostal_donde_las_paisas/commits/develop "Documentation") [📢](#talk-JhonatanRojas "Talkative") |[<img src="https://avatars0.githubusercontent.com/u/47303666?s=400&u=94953d99639522e7420270581b64435c2fe9e2b9&v=4" width="100px"/><br /><sub><b>Wilmer Bohorquez</b></sub>](https://github.com/Wilyos)<br />[💻]
+| [<img src="" width="100px;"/><br /><sub><b>Jhonatan Rojas</b></sub>](https://github.com/jhonatanrojasbastidas)<br />[💻](https://github.com/rtsc8/hostal_donde_las_paisas/commits/develop "Code") [📋](#eventOrganizing-JhonatanRojas "Event Organizing") [📖](https://github.com/rtsc8/hostal_donde_las_paisas/commits/develop "Documentation") [📢](#talk-JhonatanRojas "Talkative") |[<img src="" width="100px"/><br /><sub><b>Wilmer Bohorquez</b></sub>](https://github.com/Wilyos)<br />[💻]
 | :---: | :---: | :---: | :---: | :---: |
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
