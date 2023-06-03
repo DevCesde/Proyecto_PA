@@ -11,7 +11,7 @@ Proyecto del curso Programación Avanzada con integración en desarrollo de tecn
 ## Instrucciones 🚀
 
 En la rama develop estará el proyecto, el cual usa React Native..
-Con git bash instalado podra ejecutar el siguiente comando para traer una copia del proyecto: git clone https://github.com/rtsc8/hostal_donde_las_paisas.git
+Con git bash instalado podra ejecutar el siguiente comando para traer una copia del proyecto: git clone [https://github.com/DevCesde/Proyecto_PA.git]
 Para ejecutar el proyecto debe descargar el proyecto y en la terminal desde la carpeta del proyecto descarga las dependecias con: "npm install" y luego con el comando "npx expo start" podrá abrir el proyecto en un web browser.
 
 ### Pre-requisitos 📋
@@ -56,7 +56,7 @@ Nuestra forma de desarrollar este proyecto es el siguiente:
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 
-| [<img src="https://avatars.githubusercontent.com/u/46386386?s=400&u=76d4de560189025b83c8735576e0f6ac703099e6&v=4" width="100px;"/><br /><sub><b>Jhonatan Rojas</b></sub>](https://github.com/jhonatanrojasbastidas)<br />[💻](https://github.com/rtsc8/hostal_donde_las_paisas/commits/develop "Code") [📋](#eventOrganizing-JhonatanRojas "Event Organizing") [📖](https://github.com/rtsc8/hostal_donde_las_paisas/commits/develop "Documentation") [📢](#talk-JhonatanRojas "Talkative") |[<img src="" width="100px"/><br /><sub><b>Wilmer Bohorquez</b></sub>](https://github.com/Wilyos)<br />[💻]
+| [<img src="https://avatars.githubusercontent.com/u/46386386?s=400&u=76d4de560189025b83c8735576e0f6ac703099e6&v=4" width="100px;"/><br /><sub><b>Jhonatan Rojas</b></sub>](https://github.com/jhonatanrojasbastidas)<br />[💻](https://github.com/DevCesde/Proyecto_PA.git "Code") [📋](#eventOrganizing-JhonatanRojas "Event Organizing") [📖](https://github.com/DevCesde/Proyecto_PA.git "Documentation") [📢](#talk-JhonatanRojas "Talkative") |[<img src="https://avatars.githubusercontent.com/u/10489970?v=4" width="100px"/><br/><sub><b>Wilmer Bohorquez</b></sub>](https://github.com/Wilyos)<br/>[💻](https://github.com/DevCesde/Proyecto_PA.git "Code")|[<img src="https://avatars.githubusercontent.com/u/92557462?v=4" width="100px;"/><br/><sub><b>Cristian Marin</b></sub>](https://github.com/Oponobono)<br />[💻](https://github.com/DevCesde/Proyecto_PA.git "Code")|[<img src="https://avatars.githubusercontent.com/u/101907988?v=4" width="100px;"/><br /><sub>Jose Cortes</b></sub>](https://github.com/JAcd8418)<br />[💻](https://github.com/DevCesde/Proyecto_PA.git "Code")|[<img src= "https://avatars.githubusercontent.com/u/80930360?v=4" width="100px;"/><br /><sub><b> Hervis</b></sub>](https://github.com/hervis30)<br/> [💻](https://github.com/DevCesde/Proyecto_PA.git "code") |
 | :---: | :---: | :---: | :---: | :---: |
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
