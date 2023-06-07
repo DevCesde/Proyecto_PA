@@ -27,7 +27,7 @@ exports.deleteUsuario = (req, res) =>
 exports.updateUsuario = (req, res) =>
     Usuario.findOneAndUpdate(
         { _id: req.params.id },
-        { $set: { usuario: req.body.usuario, nombre: req.body.nombre, contrasena:req.body.contrasena, role: req.body.role, palabraReservada: req.body.palabraReservada } }, 
+        { $set: { usuario: req.body.usuario, nombre: req.body.nombre, contrasena:req.body.contrasena, role: req.body.role, palabrareservada: req.body.palabrareservada } }, 
         (err, data) => {
             if (err) res.json({ error: err });
             else     res.json(data);
@@ -36,7 +36,7 @@ exports.updateUsuario = (req, res) =>
 
 
 exports.createUsuario = (req, res) =>
-    new Usuario({ usuario: req.body.usuario, nombre: req.body.nombre, contrasena:req.body.contrasena, role: req.body.role, palabraReservada: req.body.palabraReservada })
+    new Usuario({ usuario: req.body.usuario, nombre: req.body.nombre, contrasena:req.body.contrasena, role: req.body.role, palabrareservada: req.body.palabrareservada })
     .save((err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
