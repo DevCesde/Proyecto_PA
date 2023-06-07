@@ -36,7 +36,7 @@ Tener un web browser (preferably Google Chrome)
 
 Nuestra forma de desarrollar este proyecto es el siguiente:
 
-1. Encontrar una tarea que se sienta cómodo desarrollando.<br />
+1. Encontrar una tarea que se sienta cómodo desarrollando/ Tareas en Trello: https://trello.com/b/gZuUrWyr/project-pa.<br />
 2. Verificar que toda la información que necesita esta disponible, sino, preguntar al equipo.<br />
 3. Asignarse la tarea ud. mismo y moverse de la sección de "To do" a "Doing" columnas en el tablero de trello.<br />
 4. Crear un nueva rama desde `develop` usando esta noménclatura:<br />
