@@ -1,5 +1,11 @@
 # Proyecto_PA
-Proyecto del curso Programación Avanzada con integración en desarrollo de tecnologías móviles. 
+El proyecto del curso "Programación Avanzada con integración en desarrollo de tecnologías móviles" es una simulación que combina metodologías ágiles con el uso de la herramienta Git y GitHub. En este proyecto, los participantes demuestran su habilidad para trabajar en equipo utilizando ramas individuales asignadas a cada desarrollador.
+
+Este proyecto se lleva a cabo como una exposición, donde el enfoque principal está en la colaboración y la integración de los conocimientos adquiridos en el curso. A través de la utilización de Git y GitHub, los participantes aprenden a gestionar eficientemente las versiones del proyecto, controlar los cambios y facilitar la colaboración simultánea de múltiples desarrolladores.
+
+El trabajo en equipo es un aspecto fundamental de este proyecto, ya que se fomenta la comunicación constante, la resolución de conflictos y la coordinación entre los diferentes roles y tareas asignadas. La utilización de ramas individuales permite a cada desarrollador trabajar en sus tareas designadas de forma aislada, evitando interferencias con el trabajo de otros miembros del equipo.
+
+En resumen, este proyecto constituye una oportunidad para aplicar los conceptos aprendidos en el curso de Programación Avanzada y la integración de tecnologías móviles, destacando la importancia del trabajo en equipo y el uso de herramientas como Git y GitHub para una gestión efectiva del desarrollo de software.
 
 ## Read 📄
 
@@ -16,6 +22,7 @@ Para ejecutar el proyecto debe descargar el proyecto y en la terminal desde la c
 
 ### Pre-requisitos 📋
 
+Debe correr el backend(servidor de node.js) esto con el fin de que se conecte a MongoDb a través de atlas.
 Tener un web browser (preferably Google Chrome)
 
 ## Construido con 🛠️
@@ -52,7 +59,7 @@ Nuestra forma de desarrollar este proyecto es el siguiente:
 - Si alguien pregunta sobre su PR, eso no significa que lo este atacando en ninguna forma.
 - Pregunte todo lo que necesite, este es un trabajo en equipo.
 
-## Colaborators ✒️
+## Colaboradores ✒️
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 
