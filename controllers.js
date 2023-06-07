@@ -11,7 +11,7 @@ exports.readUsuarios = (req, res) =>
 
 
 exports.readUsuario = (req, res) =>
-    Usuario.findOne({ _id: req.params.id }, (err, data) => {
+    Usuario.findOne({ usuario: req.params.usuario}, (err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
     });
@@ -42,6 +42,7 @@ exports.createUsuario = (req, res) =>
         else     res.json(data);
     });
 
+  
 
 
 // ------ CARROS
@@ -54,7 +55,7 @@ exports.readCarros = (req, res) =>
 
 
 exports.readCarro = (req, res) =>
-    Carro.findOne({ _id: req.params.id }, (err, data) => {
+    Carro.findOne({ placa: req.params.placa }, (err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
     });
