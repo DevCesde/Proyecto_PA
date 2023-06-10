@@ -8,6 +8,7 @@ const router = express.Router();
 
 // --------------- API REST CRUD
 
+
 router.get("/usuarios/:usuario", cors(), controller.readUsuario);
 router.get("/usuarios", cors(), controller.readUsuarios);   // Read All
 router.get("/usuarios/:id", cors(), controller.readUsuario);    // Read
@@ -20,6 +21,20 @@ router.get("/carros/:id", cors(), controller.readCarro);   // Read
 router.delete("/carros/:id", cors(), controller.deleteCarro); // Delete
 router.put("/carros/:id", cors(), controller.updateCarro); // Update
 router.post("/carros", cors(), controller.createCarro); // Create
+
+router.get("/usuarios", cors(), controller.readUsuarios);   // Read All
+router.get("/usuarios/:usuario", cors(), controller.readUsuario);    // Read
+router.delete("/usuarios/:id", cors(), controller.deleteUsuario);  // Delete
+router.put("/usuarios/:id", cors(), controller.updateUsuario);  // Update
+router.post("/usuarios", cors(), controller.createUsuario);  // Create
+
+
+router.get("/carros", cors(), controller.readCarros);  // Read All
+router.get("/carros/:placa", cors(), controller.readCarro);   // Read
+router.delete("/carros/:id", cors(), controller.deleteCarro); // Delete
+router.put("/carros/:id", cors(), controller.updateCarro); // Update
+router.post("/carros", cors(), controller.createCarro); // Create
+>>>>>>> origin/production
 
 router.get("/rentas", cors(), controller.readRentas);  // Read All
 router.get("/rentas/:id", cors(), controller.readRenta);   // Read
