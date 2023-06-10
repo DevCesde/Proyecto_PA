@@ -1,6 +1,7 @@
 import { Button, TextInput } from 'react-native-paper'
 import { StyleSheet, Text, View } from 'react-native';
 import { useState, useEffect } from 'react';
+import useRegistroVehiculos from '../hooks/useRegistroVehiculos';
 
 import { useForm, Controller } from "react-hook-form";
 import React from "react";
@@ -8,28 +9,9 @@ import axios from 'axios';
 
 
 
-export default function Login({ navigation, onIdentificaRol }) {
+export default function Login({ navigation }) {
 
-
-    // useEffect(() => {
-    //     funcionInicio();
-    // }, []);
-
-    // const funcionInicio = () => {
-    //     navigation.navigate('login');
-    //     console.log("funcion de inicio");
-    // }
-
-    let onAdmin = () => {
-        const rol = true;
-        onIdentificaRol(rol);
-        console.log(rol);
-    };
-    let onUser = () => {
-        const rol = false;
-        onIdentificaRol(rol);
-        console.log(rol);
-    };
+    const { user, setUser } = useRegistroVehiculos();
 
     const [errormessage, setErrorMessage] = useState('');
     const [message, setMessage] = useState('');
@@ -49,19 +31,22 @@ export default function Login({ navigation, onIdentificaRol }) {
 
 
         try {
-            const response = await axios.get(`http://192.168.1.1:3000/api/usuarios/${data.usuario}`); console.log(response.data)
+            const response = await axios.get(`http://192.168.1.2:3000/api/usuarios/${data.usuario}`); console.log(response.data)
             if (response.data.usuario === data.usuario && response.data.contrasena === data.contrasena) { // Encuentra el usuario 
                 console.log("conectado")
-                if (response.data.role === 1) {
+                if (response.data.role === "1") {
                     //navigation.navigate(/*devolucion de vehiculos o lista de vehiculos*/)
 
                     console.log("User");
+                    setUser(false);
                     reset();
+                    navigation.navigate('vehiculoDisponible');
                 }
-                else {
+                else if (response.data.role === "2") {
                     //navigation.navigate(/* renta de vehiculo*/)
-                    reset();
                     console.log("Admin");
+                    setUser(true);
+                    reset();
                     navigation.navigate('vehiculoDisponible');
                 }
 

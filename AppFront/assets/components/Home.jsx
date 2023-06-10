@@ -11,10 +11,8 @@ import { styles } from '../styles/Style'
 //useState global
 
 //componentes
-import RegistroLogin from './RegistroLogin';
 import VehiculosDisponibles from './VehiculosDisponibles';
 import RegistroVehiculo from './RegistroVehiculo';
-import RegistroUsuario from './RegistroUsuario';
 import Login from './Login';
 import RentaVehiculo from './RentaVehiculo';
 import DevolucionVehiculo from './DevolucionVehiculo';
@@ -43,6 +41,7 @@ const Home = () => {
                 }
                 }
             >
+                {/* componente se oculta cuando se inicia como rol administrador */}
                 {!selectRol && (
                     <Tab.Screen name='rentaVehiculo' component={RentaVehiculo} options={{
 
@@ -55,6 +54,7 @@ const Home = () => {
                     />
                 )}
 
+                {/* componente se oculta cuando se inicia como rol usuario */}
                 {selectRol && (
                     <Tab.Screen name='devolucionVehiculo' component={DevolucionVehiculo} options={{
 
@@ -69,12 +69,12 @@ const Home = () => {
 
 
 
-                <Tab.Screen name='RegistroLogin' component={() => (<RegistroLogin
+                <Tab.Screen name='vehiculoDisponible' component={() => (<VehiculosDisponibles
                     registro={registro}
                     onIdentificaRol={onIdentificaRol}
                 />)} options={{
                     //tabBarStyle: { display: "none" },
-                    title: 'Registro_Login', tabBarIcon: ({ color, size }) => (
+                    title: 'Vehiculos_Disponibles', tabBarIcon: ({ color, size }) => (
                         <Ionicons name='people' color={color} size={30} />
                     ),
                     tabBarVisible: false, // Ocultar la pestaña si no es administrador
@@ -82,43 +82,16 @@ const Home = () => {
                 }}
                 />
 
-                <Tab.Screen name='vehiculoDisponible' component={VehiculosDisponibles} options={{
+                <Tab.Screen name='RegistroVehiculo' component={RegistroVehiculo} options={{
 
-                    title: 'Vehiculo_Disponible', tabBarIcon: ({ color, size }) => (
+                    title: 'Registro_Vehiculo', tabBarIcon: ({ color, size }) => (
                         <Ionicons name='car' color={color} size={30} />
                     ),
-                    tabBarVisible: false, // Mostrar siempre la pestaña
+                    tabBarVisible: true, // Mostrar siempre la pestaña
                     headerShown: true, // Mostrar siempre el encabezado
                 }}
                 />
 
-
-
-                {/* <Tab.Screen name='Login' component={Login} options={{
-
-                    title: 'Login', tabBarIcon: ({ color, size }) => (
-                        <Ionicons name='car' color={color} size={30} />
-                    ),
-                    tabBarVisible: false, // Mostrar siempre la pestaña
-                    headerShown: false, // Mostrar siempre el encabezado
-                }}
-                /> */}
-
-
-                {
-                    selectRol && (
-                        <Tab.Screen name='RegistroVehiculo' component={RegistroVehiculo} options={{
-
-                            title: 'Registro_Vehiculo', tabBarIcon: ({ color, size }) => (
-                                <Ionicons name='car' color={color} size={30} />
-                            ),
-                            tabBarVisible: true, // Mostrar siempre la pestaña
-                            headerShown: true, // Mostrar siempre el encabezado
-                        }}
-
-                        />
-                    )
-                }
 
                 <Tab.Screen name='login' component={Login} options={{
                     tabBarStyle: { display: "none" },
@@ -129,11 +102,6 @@ const Home = () => {
                     headerShown: false, // Mostrar siempre el encabezado
                 }}
                 />
-
-
-
-
-
 
             </Tab.Navigator>
         </AppContexProvider>

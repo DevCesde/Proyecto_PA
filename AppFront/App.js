@@ -7,7 +7,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from './assets/components/Home';
 import RegistroUsuario from './assets/components/RegistroUsuario';
 import Login from './assets/components/Login';
-import Inicio from './assets/components/Inicio';
 
 const stack = createNativeStackNavigator();
 
@@ -26,23 +25,12 @@ export default function App() {
           component={Home}
           options={{ title: "Renta Car" }}
         />
-        <stack.Screen
-          name="inicio"
-          component={Inicio}
-          options={{ title: "Renta Car" }}
-        />
 
         <stack.Screen
           name="registroUsuario"
           component={RegistroUsuario}
           options={{ title: "Registro usuario" }}
         />
-
-        {/* <stack.Screen
-          name="login"
-          component={Login}
-          options={{ title: "Login" }}
-        /> */}
 
       </stack.Navigator>
     </NavigationContainer>

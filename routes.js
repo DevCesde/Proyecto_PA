@@ -34,7 +34,7 @@ router.get("/carros/:placa", cors(), controller.readCarro);   // Read
 router.delete("/carros/:id", cors(), controller.deleteCarro); // Delete
 router.put("/carros/:id", cors(), controller.updateCarro); // Update
 router.post("/carros", cors(), controller.createCarro); // Create
->>>>>>> origin/production
+
 
 router.get("/rentas", cors(), controller.readRentas);  // Read All
 router.get("/rentas/:id", cors(), controller.readRenta);   // Read
