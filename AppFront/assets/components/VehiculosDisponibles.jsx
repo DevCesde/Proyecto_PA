@@ -6,7 +6,7 @@ import { styles } from '../styles/Style';
 const VehiculosDisponibles = () => {
   return (
     <View style={styles.container}>
-      <Text>Componente de vehiculos disponibles</Text>
+      <Text>Vehiculo Disponible</Text>
     </View>
   )
 }
