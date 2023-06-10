@@ -3,17 +3,17 @@ import React, { Component } from 'react';
 //ruta de estilos
 import { styles } from '../styles/Style';
 
-const RegistroLogin = ({ registro, onRegistroUsuarioStateChange }) => {
+const RegistroLogin = ({ registro, onIdentificaRol }) => {
 
-  let handleStateChange = () => {
-    const newState = true;
-    onRegistroUsuarioStateChange(newState);
-    console.log(newState);
+  let onAdmin = () => {
+    const rol = true;
+    onIdentificaRol(rol);
+    console.log(rol);
   };
-  let handleStatefalse = () => {
-    const newState = false;
-    onRegistroUsuarioStateChange(newState);
-    console.log(newState);
+  let onUser = () => {
+    const rol = false;
+    onIdentificaRol(rol);
+    console.log(rol);
   };
 
   //const estado = this.props.registroUsuarioState;
@@ -22,9 +22,9 @@ const RegistroLogin = ({ registro, onRegistroUsuarioStateChange }) => {
     <View style={styles.container}>
       <Text>Componente de login y registro</Text>
       <Text>Estado: {registro}</Text>
-      <Button title="Admin" onPress={handleStateChange} />
+      <Button title="Admin" onPress={onAdmin} />
       <br />
-      <Button title="User" onPress={handleStatefalse} />
+      <Button title="User" onPress={onUser} />
     </View>
   )
 

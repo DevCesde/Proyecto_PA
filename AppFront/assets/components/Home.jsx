@@ -16,6 +16,8 @@ import VehiculosDisponibles from './VehiculosDisponibles';
 import RegistroVehiculo from './RegistroVehiculo';
 import RegistroUsuario from './RegistroUsuario';
 import Login from './Login';
+import RentaVehiculo from './RentaVehiculo';
+import DevolucionVehiculo from './DevolucionVehiculo';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,16 +25,16 @@ const Home = () => {
 
     const [registro, setRegistro] = useState(true);
 
-    const onRegistroUsuarioStateChange = (newState) => {
-        setRegistro(newState);
+    const onIdentificaRol = (rol) => {
+        setRegistro(rol);
     }
 
-    const isAdmin = registro;
+    const selectRol = registro;
 
     return (
         <AppContexProvider >
             <Tab.Navigator
-                initialRouteName='RegistroVehiculo'
+                initialRouteName='login'
                 screenOptions={{
                     tabBarActiveTintColor: 'green',
                     tabBarActiveBackgroundColor: 'yellow',
@@ -41,21 +43,46 @@ const Home = () => {
                 }
                 }
             >
+                {!selectRol && (
+                    <Tab.Screen name='rentaVehiculo' component={RentaVehiculo} options={{
+
+                        title: 'Renta_Vehiculo', tabBarIcon: ({ color, size }) => (
+                            <Ionicons name='car' color={color} size={30} />
+                        ),
+                        tabBarVisible: false, // Mostrar siempre la pestaña
+                        headerShown: true, // Mostrar siempre el encabezado
+                    }}
+                    />
+                )}
+
+                {selectRol && (
+                    <Tab.Screen name='devolucionVehiculo' component={DevolucionVehiculo} options={{
+
+                        title: 'Devolución_Vehiculo', tabBarIcon: ({ color, size }) => (
+                            <Ionicons name='car' color={color} size={30} />
+                        ),
+                        tabBarVisible: false, // Mostrar siempre la pestaña
+                        headerShown: true, // Mostrar siempre el encabezado
+                    }}
+                    />
+                )}
+
+
 
                 <Tab.Screen name='RegistroLogin' component={() => (<RegistroLogin
                     registro={registro}
-                    onRegistroUsuarioStateChange={onRegistroUsuarioStateChange}
+                    onIdentificaRol={onIdentificaRol}
                 />)} options={{
-
+                    //tabBarStyle: { display: "none" },
                     title: 'Registro_Login', tabBarIcon: ({ color, size }) => (
                         <Ionicons name='people' color={color} size={30} />
                     ),
                     tabBarVisible: false, // Ocultar la pestaña si no es administrador
-                    headerShown: isAdmin, // Ocultar el encabezado si no es administrador
+                    headerShown: true, // Ocultar el encabezado si no es administrador
                 }}
                 />
 
-                <Tab.Screen name='VehiculoDisponible' component={VehiculosDisponibles} options={{
+                <Tab.Screen name='vehiculoDisponible' component={VehiculosDisponibles} options={{
 
                     title: 'Vehiculo_Disponible', tabBarIcon: ({ color, size }) => (
                         <Ionicons name='car' color={color} size={30} />
@@ -64,32 +91,25 @@ const Home = () => {
                     headerShown: true, // Mostrar siempre el encabezado
                 }}
                 />
-                <Tab.Screen name='RegistroUsuario' component={RegistroUsuario} options={{
 
-                    title: 'Registro_Usuario', tabBarIcon: ({ color, size }) => (
+
+
+                {/* <Tab.Screen name='Login' component={Login} options={{
+
+                    title: 'Login', tabBarIcon: ({ color, size }) => (
                         <Ionicons name='car' color={color} size={30} />
                     ),
                     tabBarVisible: false, // Mostrar siempre la pestaña
                     headerShown: false, // Mostrar siempre el encabezado
                 }}
-                />
-
-                <Tab.Screen name='Login' component={Login} options={{
-
-                    title: 'Registro_Login', tabBarIcon: ({ color, size }) => (
-                        <Ionicons name='car' color={color} size={30} />
-                    ),
-                    tabBarVisible: false, // Mostrar siempre la pestaña
-                    headerShown: false, // Mostrar siempre el encabezado
-                }}
-                />
+                /> */}
 
 
                 {
-                    isAdmin && (
+                    selectRol && (
                         <Tab.Screen name='RegistroVehiculo' component={RegistroVehiculo} options={{
 
-                            title: 'Devolución_Vehiculo', tabBarIcon: ({ color, size }) => (
+                            title: 'Registro_Vehiculo', tabBarIcon: ({ color, size }) => (
                                 <Ionicons name='car' color={color} size={30} />
                             ),
                             tabBarVisible: true, // Mostrar siempre la pestaña
@@ -99,6 +119,18 @@ const Home = () => {
                         />
                     )
                 }
+
+                <Tab.Screen name='login' component={Login} options={{
+                    tabBarStyle: { display: "none" },
+                    title: 'Cerrar sesión', tabBarIcon: ({ color, size }) => (
+                        <Ionicons name='close' color={color} size={30} />
+                    ),
+                    tabBarVisible: false, // Mostrar siempre la pestaña
+                    headerShown: false, // Mostrar siempre el encabezado
+                }}
+                />
+
+
 
 
 

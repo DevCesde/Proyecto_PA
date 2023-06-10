@@ -96,6 +96,7 @@ const RegistroUsuario = ({ navigation }) => {
             setTimeout(() => {
                 setAlerta('');
                 reset();
+                navigation.navigate('login');
             }, 2000);
 
 
@@ -195,7 +196,7 @@ const RegistroUsuario = ({ navigation }) => {
                         onChangeText={onChange}
                         value={value}
                         style={{ marginTop: 10 }}
-                        left={<TextInput.Icon icon="account" />}
+                        left={<TextInput.Icon icon="security" />}
                     />
                 )}
                 name="palabrareservada"

@@ -1,19 +1,41 @@
 import { Button, TextInput } from 'react-native-paper'
 import { StyleSheet, Text, View } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 import { useForm, Controller } from "react-hook-form";
 import React from "react";
 import axios from 'axios';
 
 
 
-export default function Login(navigation) {
+export default function Login({ navigation, onIdentificaRol }) {
+
+
+    // useEffect(() => {
+    //     funcionInicio();
+    // }, []);
+
+    // const funcionInicio = () => {
+    //     navigation.navigate('login');
+    //     console.log("funcion de inicio");
+    // }
+
+    let onAdmin = () => {
+        const rol = true;
+        onIdentificaRol(rol);
+        console.log(rol);
+    };
+    let onUser = () => {
+        const rol = false;
+        onIdentificaRol(rol);
+        console.log(rol);
+    };
 
     const [errormessage, setErrorMessage] = useState('');
     const [message, setMessage] = useState('');
 
 
-    const { control, handleSubmit, formState: { errors } } = useForm({
+    const { control, handleSubmit, formState: { errors }, reset } = useForm({
         defaultValues: {
             usuario: '',
             contrasena: ''
@@ -31,12 +53,16 @@ export default function Login(navigation) {
             if (response.data.usuario === data.usuario && response.data.contrasena === data.contrasena) { // Encuentra el usuario 
                 console.log("conectado")
                 if (response.data.role === 1) {
-                    navigation.navigate(/*devolucion de vehiculos o lista de vehiculos*/)
-                    console.log("Admin");
+                    //navigation.navigate(/*devolucion de vehiculos o lista de vehiculos*/)
+
+                    console.log("User");
+                    reset();
                 }
                 else {
-                    navigation.navigate(/* renta de vehiculo*/)
-                    console.log("User");
+                    //navigation.navigate(/* renta de vehiculo*/)
+                    reset();
+                    console.log("Admin");
+                    navigation.navigate('vehiculoDisponible');
                 }
 
                 setErrorMessage(false);
@@ -131,7 +157,7 @@ export default function Login(navigation) {
                 Ingresar
             </Button>
 
-            <Button style={{ marginTop: 10, width: 250 }} onPress={() => { navigation.navigate('Registrar') }} buttonColor='#66654B' textColor='white' icon="car-arrow-right">Registrar</Button>
+            <Button style={{ marginTop: 10, width: 250 }} onPress={() => { navigation.navigate('registroUsuario') }} buttonColor='#66654B' textColor='white' icon="car-arrow-right">Registrar</Button>
             <Button style={{ marginTop: 10, width: 250 }} onPress={() => { navigation.navigate('ResetPassword') }} buttonColor='#66654B' textColor='white' icon="help">Recuperar Contraseña</Button>
         </View>
     )
