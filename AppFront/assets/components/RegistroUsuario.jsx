@@ -22,8 +22,6 @@ const styles = StyleSheet.create({
     },
 })
 
-
-
 const RegistroUsuario = ({ navigation }) => {
 
     const [alerta, setAlerta] = useState("");
@@ -42,7 +40,7 @@ const RegistroUsuario = ({ navigation }) => {
         }
 
         try {
-            const response = await axios.get(`http://192.168.1.2:3000/api/usuarios/${data.username}`);
+            const response = await axios.get(`http://192.168.1.11:3000/api/usuarios/${data.username}`);
 
             console.log(response.data);
             if (response.data != null) {
@@ -65,7 +63,6 @@ const RegistroUsuario = ({ navigation }) => {
         }
 
 
-
     }
 
 
@@ -74,11 +71,8 @@ const RegistroUsuario = ({ navigation }) => {
 
         const { username, name, password, passwordRep, palabrareservada } = data
 
-
-
-
         try {
-            const response = await axios.post(`http://192.168.1.2:3000/api/usuarios
+            const response = await axios.post(`http://192.168.1.11:3000/api/usuarios
           `, {
 
                 usuario: username,
@@ -108,10 +102,6 @@ const RegistroUsuario = ({ navigation }) => {
         }
     }
 
-
-
-
-
     const { control, handleSubmit, formState: { errors }, reset } = useForm({
         defaultValues: {
             username: '',
@@ -128,7 +118,6 @@ const RegistroUsuario = ({ navigation }) => {
 
         <View style={styles.container}>
             <Text style={{ color: 'black', fontSize: 25, fontWeight: 'bold', textTransform: 'capitalize' }}>Registrate</Text>
-
             <Text style={{ color: 'red', fontSize: 12, fontWeight: 'bold', textTransform: 'uppercase' }}>{errormessage}</Text>
             <Text style={{ color: 'green', fontSize: 12, fontWeight: 'bold', textTransform: 'uppercase' }}>{alerta}</Text>
 
@@ -154,10 +143,6 @@ const RegistroUsuario = ({ navigation }) => {
             {errors.username?.type === 'required' && <Text>Este Campo es Obligatorio</Text>}
             {errors.username?.type === 'pattern' && <Text>Escribe un nombre de usuario solo con letras y numeros</Text>}
 
-
-
-
-
             {/*Name */}
             <Controller
                 control={control}
@@ -179,7 +164,6 @@ const RegistroUsuario = ({ navigation }) => {
             />
             {errors.name?.type === 'required' && <Text>Este Campo es Obligatorio</Text>}
             {errors.name?.type === 'pattern' && <Text>Escriba un Nombre solo con Letras y Espacios</Text>}
-
 
 
             {/*Palabra Reservada */}

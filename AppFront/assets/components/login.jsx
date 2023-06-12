@@ -31,7 +31,7 @@ export default function Login({ navigation }) {
 
 
         try {
-            const response = await axios.get(`http://192.168.1.2:3000/api/usuarios/${data.usuario}`); console.log(response.data)
+            const response = await axios.get(`192.168.1.11:3000/api/usuarios/${data.usuario}`); console.log(response.data)
             if (response.data.usuario === data.usuario && response.data.contrasena === data.contrasena) { // Encuentra el usuario 
                 console.log("conectado")
                 if (response.data.role === "1") {
@@ -143,7 +143,7 @@ export default function Login({ navigation }) {
             </Button>
 
             <Button style={{ marginTop: 10, width: 250 }} onPress={() => { navigation.navigate('registroUsuario') }} buttonColor='#66654B' textColor='white' icon="car-arrow-right">Registrar</Button>
-            <Button style={{ marginTop: 10, width: 250 }} onPress={() => { navigation.navigate('ResetPassword') }} buttonColor='#66654B' textColor='white' icon="help">Recuperar Contraseña</Button>
+            <Button style={{ marginTop: 10, width: 250 }} onPress={() => { navigation.navigate('ResetPassword') }} buttonColor='#66654B' textColor='white' icon="lock">Recuperar Contraseña</Button>
         </View>
     )
 }
@@ -156,3 +156,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
+
