@@ -12,16 +12,6 @@ import React from "react";
 import { useState } from 'react';
 import { useForm, Controller } from "react-hook-form";
 
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-})
-
 const RegistroUsuario = ({ navigation }) => {
 
     const [alerta, setAlerta] = useState("");
@@ -244,9 +234,42 @@ const RegistroUsuario = ({ navigation }) => {
 
             {/* */}
 
-            <Button buttonColor='orange' textColor='white' style={{ marginTop: 10, width: 280, fontSize: 15 }} mode="contained" title="Submit" icon='car-convertible' onPress={handleSubmit(onSearch)}> Enviar </Button>
+            <Button
+                buttonColor='orange'
+                textColor='white'
+                mode="contained"
+                title="Submit"
+                icon='car-convertible'
+                onPress={handlePress}
+                onPressOut={handleRelease}
+                buttonStyle={[
+                styles.button,
+                { backgroundColor: isPressed ? '#999989' : 'orange' },
+                ]}
+                textStyle={styles.buttonText}
+            >
+                Enviar
+            </Button>
         </View>
-    )
-}
+    );
+};
 
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    button: {
+      marginTop: 10,
+      width: 250,
+      transitionProperty: 'background-color',
+      transitionDuration: '0.3s',
+    },
+    buttonText: {
+      color: 'white',
+    },
+  });
 export default RegistroUsuario

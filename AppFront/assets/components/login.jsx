@@ -2,6 +2,7 @@ import { Button, TextInput } from 'react-native-paper'
 import { StyleSheet, Text, View } from 'react-native';
 import { useState, useEffect } from 'react';
 import useRegistroVehiculos from '../hooks/useRegistroVehiculos';
+import { Button } from 'react-native-elements';
 
 import { useForm, Controller } from "react-hook-form";
 import React from "react";
@@ -78,9 +79,6 @@ export default function Login({ navigation }) {
             <Text style={{ color: 'red' }}>{setErrorMessage}</Text>
             <Text style={{ color: 'gray' }}>{setMessage} </Text>
 
-
-
-
             {/*usuario */}
             <Controller
                 control={control}
@@ -103,8 +101,6 @@ export default function Login({ navigation }) {
             />
             {errors.usuario?.type === 'required' && <Text>Este Campo es Obligatorio</Text>}
             {errors.usuario?.type === 'pattern' && <Text>Escriba un Nombre solo con Letras y Espacios</Text>}
-
-
 
             {/*contrasena */}
             <Controller
@@ -131,29 +127,62 @@ export default function Login({ navigation }) {
 
 
 
-            <Button
-                icon="door"
-                mode="contained"
-                buttonColor='#B3AE4F'
-                textColor='white'
-                onPress={handleSubmit(onSearch)}
-                style={{ marginTop: 10, width: 250 }}
-            >
-                Ingresar
-            </Button>
+    <Button
+        icon="door"
+        mode="contained"
+        title="Ingresar"
+        onPress={handlePress}
+        onPressOut={handleRelease}
+        buttonStyle={[
+          styles.button,
+          { backgroundColor: isPressed ? '#999989' : '#B3AE4F' },
+        ]}
+        textStyle={styles.buttonText}
+      />
 
-            <Button style={{ marginTop: 10, width: 250 }} onPress={() => { navigation.navigate('registroUsuario') }} buttonColor='#66654B' textColor='white' icon="car-arrow-right">Registrar</Button>
-            <Button style={{ marginTop: 10, width: 250 }} onPress={() => { navigation.navigate('ResetPassword') }} buttonColor='#66654B' textColor='white' icon="lock">Recuperar Contraseña</Button>
-        </View>
-    )
-}
+      <Button
+        title="Registrar"
+        onPress={() => navigation.navigate('registroUsuario')}
+        buttonStyle={[
+          styles.button,
+          { backgroundColor: isPressed ? '#999989' : '#66654B' },
+        ]}
+        textStyle={styles.buttonText}
+      />
+
+      <Button
+        title="Recuperar Contraseña"
+        onPress={() => navigation.navigate('ResetPassword')}
+        buttonStyle={[
+          styles.button,
+          { backgroundColor: isPressed ? '#999989' : '#66654B' },
+        ]}
+        textStyle={styles.buttonText}
+      />
+ </View>
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'center',
+      flex: 1,
+      backgroundColor: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
-});
+    button: {
+      marginTop: 10,
+      width: 250,
+      transitionProperty: 'background-color',
+      transitionDuration: '0.3s',
+    },
+    buttonText: {
+      color: 'white',
+    },
+  });
+
+  
+  
+  
+  
 
